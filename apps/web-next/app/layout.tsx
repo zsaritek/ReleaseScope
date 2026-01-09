@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Container } from "@releasescope/ui";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,7 +17,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en">
       <body>
         <header className="border-b border-slate-200">
-          <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
+          <Container
+            as="div"
+            className="flex items-center justify-between py-4"
+          >
             <Link href="/" className="font-semibold tracking-tight">
               ReleaseScope
             </Link>
@@ -37,9 +41,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 Features
               </Link>
             </nav>
-          </div>
+          </Container>
         </header>
-        <main className="mx-auto max-w-5xl px-4 py-8">{children}</main>
+        <Container as="main" className="py-8">
+          {children}
+        </Container>
       </body>
     </html>
   );
