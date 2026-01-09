@@ -1,6 +1,6 @@
 export { Badge } from "./components/Badge";
 export type { BadgeProps, BadgeVariant } from "./components/Badge";
-
+export * from "./Separator";
 export { Button } from "./components/Button";
 export type { ButtonProps, ButtonSize, ButtonVariant } from "./components/Button";
 
