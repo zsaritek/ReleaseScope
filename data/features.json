@@ -1,0 +1,28 @@
+[
+  {
+    "id": "release-viewer",
+    "title": "Release viewer",
+    "description": "Browse releases and grouped changelog items.",
+    "status": "live"
+  },
+  {
+    "id": "feature-status",
+    "title": "Feature statuses",
+    "description": "Track planned vs live vs deprecated features.",
+    "status": "live"
+  },
+  {
+    "id": "dark-mode",
+    "title": "Dark mode",
+    "description": "Toggle dark mode and persist preference locally.",
+    "status": "planned"
+  },
+  {
+    "id": "export-changelog",
+    "title": "Export changelog",
+    "description": "Export a release summary for sharing.",
+    "status": "deprecated"
+  }
+]
+
+
