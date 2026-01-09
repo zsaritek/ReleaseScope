@@ -19,6 +19,10 @@ function readStoredTheme(): Theme | null {
   return null;
 }
 
+function getSystemTheme(): Theme {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
 function writeStoredTheme(theme: Theme) {
   localStorage.setItem(STORAGE_KEY, theme);
 }
@@ -28,7 +32,7 @@ export function ThemeToggle() {
 
   React.useEffect(() => {
     const stored = readStoredTheme();
-    const initial: Theme = stored ?? "light";
+    const initial: Theme = stored ?? getSystemTheme();
     applyTheme(initial);
     setTheme(initial);
   }, []);

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@releasescope/ui";
+import { NavLink } from "../components/NavLink";
 import { ThemeToggle } from "../components/ThemeToggle";
 import "./globals.css";
 
@@ -19,7 +20,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var k="releasescope.theme";var t=localStorage.getItem(k);if(t==="dark"){document.documentElement.classList.add("dark")}}catch(e){}})();`
+            __html: `(function(){try{var k="releasescope.theme";var t=localStorage.getItem(k);var m=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(t==="dark"||(!t&&m)){document.documentElement.classList.add("dark")}}catch(e){}})();`
           }}
         />
       </head>
@@ -27,7 +28,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <header className="border-b border-slate-200 dark:border-slate-800">
           <Container
             as="div"
-            className="flex items-center justify-between py-4"
+            className="flex flex-wrap items-center justify-between gap-3 py-4"
           >
             <Link href="/" className="font-semibold tracking-tight">
               ReleaseScope
@@ -35,26 +36,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <div className="flex items-center gap-3">
               <nav
                 aria-label="Primary"
-                className="flex items-center gap-4 text-sm"
+                className="flex flex-wrap items-center gap-4 text-sm"
               >
-                <Link
-                  href="/"
-                  className="text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-50"
-                >
-                Home
-                </Link>
-                <Link
-                  href="/changelog"
-                  className="text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-50"
-                >
-                Changelog
-                </Link>
-                <Link
-                  href="/features"
-                  className="text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-50"
-                >
-                Features
-                </Link>
+                <NavLink href="/">Home</NavLink>
+                <NavLink href="/changelog">Changelog</NavLink>
+                <NavLink href="/features">Features</NavLink>
               </nav>
               <ThemeToggle />
             </div>
