@@ -1,5 +1,5 @@
 import { Badge, Card, CardContent, CardHeader, CardTitle } from "@releasescope/ui";
-
+import { Separator } from "@releasescope/ui";
 import { getFeatures } from "../../lib/data";
 import type { Feature, FeatureStatus } from "../../lib/types";
 
@@ -36,7 +36,7 @@ export default async function FeaturesPage() {
         <h1 className="text-2xl font-semibold tracking-tight">Features</h1>
         <p className="text-slate-700">Live first, then planned, then deprecated.</p>
       </div>
-
+      <Separator className="my-4" />
       {features.length === 0 ? (
         <Card>
           <CardContent className="pt-4">
