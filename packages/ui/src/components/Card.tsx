@@ -13,7 +13,7 @@ export function Card({ as = "div", className, ...props }: CardProps) {
   return (
     <Component
       className={cn(
-        "rounded-lg border border-slate-200 bg-white text-slate-900",
+        "rounded-lg border border-slate-200 bg-white text-slate-900 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-50",
         className
       )}
       {...props}
